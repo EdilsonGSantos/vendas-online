@@ -14,6 +14,6 @@ export class UserController {
 
   @Get()
   async getAllUser(): Promise<UserEntity[]> {
-    return this.userService.getAlUser();
+    return this.userService.getAllUser();
   }
 }
