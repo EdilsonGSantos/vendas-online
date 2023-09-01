@@ -8,8 +8,9 @@ import { AddressModule } from './address/address.module';
 import { CacheModule } from './cache/cache.module';
 import { AuthModule } from './auth/auth.module';
 import { APP_GUARD } from '@nestjs/core';
-import { JwtModule } from '@nestjs/jwt';
 import { RolesGuard } from './guards/roles.guard';
+import { JwtModule } from '@nestjs/jwt';
+import { UserService } from './user/user.service';
 
 @Module({
   imports: [
@@ -24,7 +25,7 @@ import { RolesGuard } from './guards/roles.guard';
       port: Number(process.env.DB_PORT),
       username: process.env.DB_USERNAME,
       entities: [`${__dirname}/**/*.entity{.js,.ts}`],
-      migrations: [`${__dirname}/migration/{.js,*.ts}`],
+      migrations: [`${__dirname}/migration/{.ts,*.js}`],
       migrationsRun: true,
     }),
     UserModule,
@@ -41,6 +42,7 @@ import { RolesGuard } from './guards/roles.guard';
       provide: APP_GUARD,
       useClass: RolesGuard,
     },
+    UserService,
   ],
 })
 export class AppModule {}
