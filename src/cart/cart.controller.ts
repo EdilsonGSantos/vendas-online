@@ -1,6 +1,8 @@
 import {
   Body,
   Controller,
+  Delete,
+  Get,
   Post,
   UsePipes,
   ValidationPipe,
@@ -8,6 +10,7 @@ import {
 import { Roles } from 'src/decorators/roles.decorator';
 import { UserId } from 'src/decorators/user-id.decorator';
 import { UserType } from 'src/user/enum/user-type.enum';
+import { DeleteResult } from 'typeorm';
 import { CartService } from './cart.service';
 import { ReturnCartDTO } from './dtos/return-cart.dto';
 import { InsertCartDTO } from './dtos/inser-cart.dto';
@@ -26,5 +29,17 @@ export class CartController {
     return new ReturnCartDTO(
       await this.cartService.insertProductInCart(insertCart, userId),
     );
+  }
+
+  @Get()
+  async findCartByUserId(@UserId() userId: number): Promise<ReturnCartDTO> {
+    return new ReturnCartDTO(
+      await this.cartService.findCartByUserId(userId, true),
+    );
+  }
+
+  @Delete()
+  async clearCart(@UserId() userId: number): Promise<DeleteResult> {
+    return this.cartService.clearCart(userId);
   }
 }
