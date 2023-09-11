@@ -1,5 +1,5 @@
-import { CartEntity } from 'src/cart/entities/cart.entity';
-import { ProductEntity } from 'src/product/entities/product.entity';
+import { CartEntity } from '../../cart/entities/cart.entity';
+import { ProductEntity } from '../../product/entities/product.entity';
 import {
   Column,
   CreateDateColumn,
@@ -10,7 +10,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity({ name: 'product' })
+@Entity({ name: 'cart_product' })
 export class CartProductEntity {
   @PrimaryGeneratedColumn('rowid')
   id: number;
