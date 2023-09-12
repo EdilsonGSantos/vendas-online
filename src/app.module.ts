@@ -15,6 +15,8 @@ import { ProductModule } from './product/product.module';
 import { CartController } from './cart/cart.controller';
 import { CartModule } from './cart/cart.module';
 import { CartProductModule } from './cart-product/cart-product.module';
+import { Address2Controller } from './address2/address2.controller';
+import { Auth2Controller } from './auth2/auth2.controller';
 
 @Module({
   imports: [
@@ -44,7 +46,7 @@ import { CartProductModule } from './cart-product/cart-product.module';
     CartModule,
     CartProductModule,
   ],
-  controllers: [CartController],
+  controllers: [CartController, Address2Controller, Auth2Controller],
   providers: [
     {
       provide: APP_GUARD,
