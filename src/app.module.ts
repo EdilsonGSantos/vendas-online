@@ -21,6 +21,8 @@ import { Cart2Controller } from './cart2/cart2.controller';
 import { Category2Controller } from './category2/category2.controller';
 import { City2Controller } from './city2/city2.controller';
 import { Product2Controller } from './product2/product2.controller';
+import { User2Controller } from './user2/user2.controller';
+import { State2Controller } from './state2/state2.controller';
 
 @Module({
   imports: [
@@ -50,7 +52,7 @@ import { Product2Controller } from './product2/product2.controller';
     CartModule,
     CartProductModule,
   ],
-  controllers: [CartController, Address2Controller, Auth2Controller, Cart2Controller, Category2Controller, City2Controller, Product2Controller],
+  controllers: [CartController, Address2Controller, Auth2Controller, Cart2Controller, Category2Controller, City2Controller, Product2Controller, User2Controller, State2Controller],
   providers: [
     {
       provide: APP_GUARD,
