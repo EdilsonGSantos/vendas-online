@@ -17,6 +17,10 @@ import { CartModule } from './cart/cart.module';
 import { CartProductModule } from './cart-product/cart-product.module';
 import { Address2Controller } from './address2/address2.controller';
 import { Auth2Controller } from './auth2/auth2.controller';
+import { Cart2Controller } from './cart2/cart2.controller';
+import { Category2Controller } from './category2/category2.controller';
+import { City2Controller } from './city2/city2.controller';
+import { Product2Controller } from './product2/product2.controller';
 
 @Module({
   imports: [
@@ -46,7 +50,7 @@ import { Auth2Controller } from './auth2/auth2.controller';
     CartModule,
     CartProductModule,
   ],
-  controllers: [CartController, Address2Controller, Auth2Controller],
+  controllers: [CartController, Address2Controller, Auth2Controller, Cart2Controller, Category2Controller, City2Controller, Product2Controller],
   providers: [
     {
       provide: APP_GUARD,
