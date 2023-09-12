@@ -1,10 +1,10 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { CartProductService } from 'src/cart-product/cart-product.service';
+import { CartProductService } from '../cart-product/cart-product.service';
 import { DeleteResult, Repository } from 'typeorm';
+import { UpdateCartDTO } from './dtos/update-cart.dto';
 import { CartEntity } from './entities/cart.entity';
 import { InsertCartDTO } from './dtos/inser-cart.dto';
-import { UpdateCartDTO } from './dtos/update-cart.dto';
 
 const LINE_AFFECTED = 1;
 
@@ -94,7 +94,7 @@ export class CartService {
       return this.createCart(userId);
     });
 
-    await this.cartProductService.insertProductInCart(updateCartDTO, cart);
+    await this.cartProductService.updateProductInCart(updateCartDTO, cart);
 
     return cart;
   }

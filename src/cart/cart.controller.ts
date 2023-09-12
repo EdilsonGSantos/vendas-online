@@ -3,21 +3,20 @@ import {
   Controller,
   Delete,
   Get,
+  Param,
+  Patch,
   Post,
   UsePipes,
   ValidationPipe,
-  Param,
-  Patch,
 } from '@nestjs/common';
-import { Roles } from 'src/decorators/roles.decorator';
-import { UserId } from 'src/decorators/user-id.decorator';
-import { UserType } from 'src/user/enum/user-type.enum';
+import { Roles } from '../decorators/roles.decorator';
+import { UserId } from '../decorators/user-id.decorator';
+import { UserType } from '../user/enum/user-type.enum';
 import { DeleteResult } from 'typeorm';
 import { CartService } from './cart.service';
 import { ReturnCartDTO } from './dtos/return-cart.dto';
-import { InsertCartDTO } from './dtos/inser-cart.dto';
-import { CartEntity } from './entities/cart.entity';
 import { UpdateCartDTO } from './dtos/update-cart.dto';
+import { InsertCartDTO } from './dtos/inser-cart.dto';
 
 @Roles(UserType.User, UserType.Admin)
 @Controller('cart')
