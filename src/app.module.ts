@@ -12,17 +12,10 @@ import { RolesGuard } from './guards/roles.guard';
 import { JwtModule } from '@nestjs/jwt';
 import { CategoryModule } from './category/category.module';
 import { ProductModule } from './product/product.module';
-import { CartController } from './cart/cart.controller';
 import { CartModule } from './cart/cart.module';
 import { CartProductModule } from './cart-product/cart-product.module';
-import { Address2Controller } from './address2/address2.controller';
-import { Auth2Controller } from './auth2/auth2.controller';
-import { Cart2Controller } from './cart2/cart2.controller';
-import { Category2Controller } from './category2/category2.controller';
-import { City2Controller } from './city2/city2.controller';
-import { Product2Controller } from './product2/product2.controller';
-import { User2Controller } from './user2/user2.controller';
-import { State2Controller } from './state2/state2.controller';
+import { PaymentStatusModule } from './payment-status/payment-status.module';
+import { PaymentModule } from './payment/payment.module';
 
 @Module({
   imports: [
@@ -51,8 +44,10 @@ import { State2Controller } from './state2/state2.controller';
     ProductModule,
     CartModule,
     CartProductModule,
+    PaymentStatusModule,
+    PaymentModule,
   ],
-  controllers: [CartController, Address2Controller, Auth2Controller, Cart2Controller, Category2Controller, City2Controller, Product2Controller, User2Controller, State2Controller],
+  controllers: [],
   providers: [
     {
       provide: APP_GUARD,
