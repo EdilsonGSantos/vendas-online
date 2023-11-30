@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { CartModule } from 'src/cart/cart.module';
-import { OrderProductModule } from 'src/order-product/order-product.module';
-import { PaymentModule } from 'src/payment/payment.module';
+import { CartModule } from '../cart/cart.module';
+import { OrderProductModule } from '../order-product/order-product.module';
+import { PaymentModule } from '../payment/payment.module';
+import { ProductModule } from '../product/product.module';
 import { OrderEntity } from './entities/order.entity';
 import { OrderController } from './order.controller';
 import { OrderService } from './order.service';
-import { ProductModule } from 'src/product/product.module';
 
 @Module({
   imports: [
